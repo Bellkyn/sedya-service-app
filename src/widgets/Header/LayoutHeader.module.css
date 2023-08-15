@@ -1,0 +1,14 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding-top: 20px;
+
+
+}
+
+.root .right_actions {
+    display: flex;
+    flex-direction: row;
+}

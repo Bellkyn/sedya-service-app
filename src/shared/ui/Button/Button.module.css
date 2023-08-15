@@ -1,0 +1,76 @@
+
+/* --smooth-corners: 5
+mask-image: paint(smooth-corners);
+-webkit-mask-image: paint(smooth-corners); */
+
+.root {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 5px;
+
+	height: 35px;
+	padding: 8px 20px;
+
+	border: none;
+	border-radius: 45px;
+
+	background: none;
+	outline: none;
+	
+	font-weight: 500;
+	font-size: 14px;
+
+	&_variant_primary {
+		color: var(--white-color);
+		background: var(--blue-primary-color);
+	}
+
+	&_variant_primary svg {
+		fill: var(--white-color);
+	}
+
+	&_variant_primary:hover {
+		color: var(--white-color);
+		background: var(--blue-secondary-color);
+	}
+
+	&_variant_text {
+		color: var(--black-color);
+	}
+
+	&_variant_text:hover {
+		color: var(--black-color);
+		text-decoration: underline;
+	}
+
+	&_variant_secondary {
+		color: var(--gray-color);
+		border: 2px solid #515151;
+	}
+
+	&_variant_secondary svg {
+		fill: var(--gray-color);
+	}
+
+	&_reversed {
+		flex-direction: row-reverse;
+	}
+}
+
+.root svg {
+	width: 18px;
+	height: 18px;
+}
+
+.root:has(svg).root_reversed{
+	padding-right: 18px;
+}
+
+.root:has(svg ){
+	padding-left: 18px;
+}
+
+.root:active {
+	transform: scale(1.05);
+}

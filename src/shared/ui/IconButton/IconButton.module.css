@@ -1,0 +1,50 @@
+.root {
+	outline: none;
+	background: none;
+	border: none;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 35px;
+	height: 35px;
+	
+	--smooth-corners: 4
+	mask-image: paint(smooth-corners);
+	-webkit-mask-image: paint(smooth-corners);
+
+	
+
+	&_variant_primary {
+		background: var(--blue-primary-color);
+	}
+
+	&_variant_primary svg {
+		fill: var(--white-color);
+	}
+
+	&_variant_primary:hover {
+		background: var(--blue-secondary-color);
+	}
+
+	&_variant_secondary {
+		border: 2px solid #515151;
+	}
+	
+	&_variant_secondary svg {
+		fill: var(--gray-color);
+	}
+
+	/* &_with_shadow {
+        box-shadow: -5px 10px 30px 0px rgba(48, 104, 249, 0.30);
+    }
+     */
+}
+
+.root svg {
+	flex:1;
+}
+
+.root:active {
+	transform: scale(1.05);
+}

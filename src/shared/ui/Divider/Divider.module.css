@@ -1,0 +1,15 @@
+.root {
+    display: inline-block;
+    align-self: stretch;
+    background: var(--gray-color);
+
+    &_horizontal{
+        height: 1px;
+        min-width: 100%;
+    }
+
+    &_vertical{
+        min-height: 100%;
+        width: 1px;
+    }
+}

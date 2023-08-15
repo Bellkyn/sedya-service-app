@@ -1,12 +1,13 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import { MainPage } from './Main';
 import { baseLayout } from 'app/layouts/baseLayout';
+import { MainPage } from './Main/Main';
 
 const router = createBrowserRouter([
 	{
 		element: baseLayout,
-		children: [{ path: '/', element: <MainPage /> }]
+		path: '/sedya-service-app/',
+		children: [{ element: <MainPage /> }]
 	}
 ]);
 

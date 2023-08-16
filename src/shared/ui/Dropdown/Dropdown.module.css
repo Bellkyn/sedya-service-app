@@ -1,0 +1,20 @@
+.root {
+	.menu {
+		position: relative;
+		padding: 35px 30px;
+		justify-content: start;
+		width: max-content;
+		height: max-content;
+		margin-top: 15px;
+
+		border-radius: 30px;
+		border: black 1px solid;
+
+		mask-image: paint(smooth-corners);
+		-webkit-mask-image: paint(smooth-corners);
+		--smooth-corners: 13;
+
+		display: grid;
+		color: black;
+	}
+}

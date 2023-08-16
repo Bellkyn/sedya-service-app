@@ -2,10 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
-    padding-top: 20px;
-
-
+    gap:10px;
+    padding: 20px 0px;
+    
 }
 
 .root .right_actions {

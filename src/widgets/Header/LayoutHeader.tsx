@@ -11,18 +11,12 @@ export const LayoutHeader: React.FC<Props> = () => {
 			<Logo />
 			<Divider orientation="vertical" />
 			<Search
-				title="Найти"
+				title="Search"
 				placeholder="placeholder"
 				onChange={e => console.log(e)}
 				onClick={e => console.log(e)}
 			/>
 			<div className={css['right_actions']}>
-				<Button
-					title="Категории ресурсов"
-					variant="text"
-					// iconPosition="right"
-					onClick={() => console.log('abcd')}
-				/>
 				<Button
 					title="Избранное"
 					variant="text"

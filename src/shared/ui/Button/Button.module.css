@@ -10,7 +10,7 @@ mask-image: paint(smooth-corners);
 	column-gap: 5px;
 
 	height: 35px;
-	padding: 8px 20px;
+	padding: 10px 15px;
 
 	border: none;
 	border-radius: 45px;
@@ -18,6 +18,7 @@ mask-image: paint(smooth-corners);
 	background: none;
 	outline: none;
 	
+	/* letter-spacing: 0.4px; */
 	font-weight: 500;
 	font-size: 14px;
 
@@ -64,13 +65,9 @@ mask-image: paint(smooth-corners);
 }
 
 .root:has(svg).root_reversed{
-	padding-right: 18px;
+	padding-right: 13px;
 }
 
 .root:has(svg ){
-	padding-left: 18px;
-}
-
-.root:active {
-	transform: scale(1.05);
+	padding-left: 13px;
 }

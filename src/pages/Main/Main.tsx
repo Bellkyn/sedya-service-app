@@ -1,3 +1,15 @@
+import { Dropdown } from 'shared/ui';
+
 export const MainPage = () => {
-	return <></>;
+	return (
+		<>
+			<Dropdown
+				buttonProps={{
+					onClick: () => console.log('dropdown'),
+					title: 'Категории ресурсов',
+					variant: 'primary'
+				}}
+			/>
+		</>
+	);
 };

@@ -7,7 +7,7 @@ const router = createBrowserRouter([
 	{
 		element: baseLayout,
 		path: '/sedya-service-app/',
-		children: [{ element: <MainPage /> }]
+		children: [{ element: <MainPage />, path: '/sedya-service-app/' }]
 	}
 ]);
 

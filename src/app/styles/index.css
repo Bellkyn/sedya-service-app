@@ -1,3 +1,9 @@
+@font-face {
+	font-family: 'Inter';
+	font-weight: 100 1000;
+	src:url('public/fonts/InterDisplay.var') format('woff2'),
+  }
+
 
 html,
 body,
@@ -12,10 +18,12 @@ body,
 	--gray-color: #515151;
 }
 
+
 * {
-	font-family: 'Manrope',sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-style: normal;
 	font-weight: normal;
+	
 
 	margin: 0%;
 	padding: 0%;

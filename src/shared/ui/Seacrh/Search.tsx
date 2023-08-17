@@ -1,7 +1,7 @@
-import { ButtonProps } from 'shared/types/ButtonProps';
 import cn from 'classnames';
-import css from './Search.module.css';
 import { SearchIcon } from '../Icons';
+import { IButtonProps } from 'shared/types';
+import css from './Search.module.css';
 
 type SearchProps = {
 	placeholder?: string;
@@ -9,7 +9,7 @@ type SearchProps = {
 	onChange: React.ChangeEventHandler<HTMLInputElement>;
 };
 
-type Props = Pick<ButtonProps, 'onClick' | 'disabled' | 'title'> & SearchProps;
+type Props = Pick<IButtonProps, 'onClick' | 'disabled' | 'title'> & SearchProps;
 
 export const Search: React.FC<Props> = ({
 	onClick,

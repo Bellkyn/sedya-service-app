@@ -5,5 +5,6 @@ export { Search } from './Seacrh/Search';
 export { Logo } from './Logo/Logo';
 export { Divider } from './Divider/Divider';
 export { Dropdown } from './Dropdown/Dropdown';
+export { DropdownListItem } from './Dropdown/DropdownListItem';
 
 export * from './Icons';

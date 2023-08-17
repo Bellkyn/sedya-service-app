@@ -1,24 +1,31 @@
-import { ButtonProps } from 'shared/types/ButtonProps';
-// import classNames from 'classnames';
+import React from 'react';
+import { useState, useMemo } from 'react';
 import { Button } from 'shared/ui/';
-import css from './Dropdown.module.css';
-import { useState } from 'react';
+import { IButtonProps } from 'shared/types';
 import { CloseIcon, MenuIcon } from 'shared/ui/Icons/';
-import { DropdownListItem } from './DropdownListItem';
+import { DropdownListItem, DropdownListItemProps } from './DropdownListItem';
+import css from './Dropdown.module.css';
 
 type Props = {
-	buttonProps: ButtonProps & {
+	buttonProps: IButtonProps & {
 		iconPosition?: 'left' | 'right';
 		variant?: 'primary' | 'secondary';
 	};
 
+	children:
+		| React.ReactElement<DropdownListItemProps>
+		| React.ReactElement<DropdownListItemProps>[];
 	rows?: number;
 };
 
 const menuIcon = <MenuIcon />;
 const closeIcon = <CloseIcon />;
 
-export const Dropdown: React.FC<Props> = ({ buttonProps, rows = 5 }) => {
+export const Dropdown: React.FC<Props> = ({
+	buttonProps,
+	rows = 5,
+	children
+}) => {
 	const [active, setActive] = useState<boolean>(false);
 	const [icon, setIcon] = useState<React.JSX.Element>(menuIcon);
 
@@ -34,6 +41,19 @@ export const Dropdown: React.FC<Props> = ({ buttonProps, rows = 5 }) => {
 		}
 		buttonProps.onClick(e);
 	};
+
+	const validatedChildren = useMemo(() => {
+		const childrens = Array.isArray(children) ? children : [children];
+		return React.Children.map(childrens, child => {
+			if (React.isValidElement(child)) {
+				if (child.type !== DropdownListItem) {
+					return null;
+				}
+				// throw new Error('child element is not "DropdownListItem"');
+				else return child;
+			}
+		});
+	}, [children]);
 
 	return (
 		<div className={css.root}>
@@ -51,16 +71,9 @@ export const Dropdown: React.FC<Props> = ({ buttonProps, rows = 5 }) => {
 						gridTemplateRows: `repeat(${rows},max-content)`
 					}}
 				>
-					<DropdownListItem />
-					<DropdownListItem />
-					<DropdownListItem />
-					<DropdownListItem />
-					<DropdownListItem />
-					<DropdownListItem />
-					<DropdownListItem />
-					<DropdownListItem />
-					<DropdownListItem />
-					<DropdownListItem />
+					{/* {validatedChildren && validatedChildren}
+					 */}
+					{children}
 				</div>
 			)}
 		</div>

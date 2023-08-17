@@ -1,4 +1,4 @@
-export interface ButtonProps {
+export interface IButtonProps {
 	onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 	variant: 'primary' | 'secondary' | 'text';
 	disabled?: boolean;

@@ -1,8 +1,8 @@
 import cn from 'classnames';
 import css from './Button.module.css';
-import { ButtonProps } from 'shared/types/ButtonProps';
+import { IButtonProps } from 'shared/types';
 
-type Props = ButtonProps & {
+type Props = IButtonProps & {
 	iconPosition?: 'left' | 'right';
 };
 
@@ -20,7 +20,7 @@ export const Button: React.FC<Props> = ({
 
 	return (
 		<button className={className} onClick={!disabled ? onClick : undefined}>
-			{icon && variant !== 'text' && icon}
+			{icon && icon}
 			{title}
 		</button>
 	);

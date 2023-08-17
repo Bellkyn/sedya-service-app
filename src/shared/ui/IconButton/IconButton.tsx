@@ -1,4 +1,4 @@
-import { ButtonProps } from 'shared/types/ButtonProps';
+import { IButtonProps } from 'shared/types';
 import css from './IconButton.module.css';
 import cn from 'classnames';
 
@@ -7,7 +7,7 @@ type IconButtonProps = {
 	icon: React.JSX.Element;
 };
 
-type Props = Omit<ButtonProps, 'title' | 'variant'> & IconButtonProps;
+type Props = Omit<IButtonProps, 'title' | 'variant'> & IconButtonProps;
 
 export const IconButton: React.FC<Props> = ({
 	onClick,

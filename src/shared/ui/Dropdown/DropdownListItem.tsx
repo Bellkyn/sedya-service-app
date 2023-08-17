@@ -1,15 +1,16 @@
-import { Button } from '..';
+import { IButtonProps } from 'shared/types';
+import { Button } from 'shared/ui';
 
-export const DropdownListItem = () => {
+type Props = Omit<IButtonProps, 'variant'>;
+
+export const DropdownListItem: React.FC<Props> = props => {
 	return (
 		<div style={{ flex: 0, width: 'max-content' }}>
-			<Button
-				title="Все категории"
-				variant="text"
-				onClick={() => {
-					console.log('asd');
-				}}
-			/>
+			<Button {...props} variant="text" />
 		</div>
 	);
 };
+
+export type DropdownListItemProps = Props;
+
+DropdownListItem.displayName = 'DropdownListItem';

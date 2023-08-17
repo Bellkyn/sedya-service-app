@@ -12,14 +12,20 @@ export const Button: React.FC<Props> = ({
 	disabled = false,
 	icon,
 	iconPosition = 'left',
-	title
+	title,
+	className
 }) => {
-	const className = cn(css.root, css[`root_variant_${variant}`], {
-		[css['root_reversed']]: iconPosition === 'right'
-	});
+	const classes = cn(
+		css.root,
+		css[`root_variant_${variant}`],
+		{
+			[css['root_reversed']]: iconPosition === 'right'
+		},
+		className
+	);
 
 	return (
-		<button className={className} onClick={!disabled ? onClick : undefined}>
+		<button className={classes} onClick={!disabled ? onClick : undefined}>
 			{icon && icon}
 			{title}
 		</button>

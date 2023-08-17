@@ -4,4 +4,5 @@ export interface IButtonProps {
 	disabled?: boolean;
 	icon?: React.JSX.Element;
 	title: string;
+	className?: string;
 }

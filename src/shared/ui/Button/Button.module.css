@@ -33,13 +33,13 @@ mask-image: paint(smooth-corners);
 	}
 
 	&_variant_text {
-		fill: var(--gray-color);
-		color: var(--gray-color);
+		color: var(--black-color);
+		color: var(--black-color);
 	}
 
 	&_variant_text:hover {
 		color: var(--black-color);
-		text-decoration: underline;
+		background: var(--light-gray-color);
 	}
 
 	&_variant_secondary {

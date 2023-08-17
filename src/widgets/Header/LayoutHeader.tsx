@@ -85,8 +85,8 @@ export const LayoutHeader: React.FC<Props> = () => {
 				))}
 			</Dropdown>
 			<Search
-				title="Search"
-				placeholder="placeholder"
+				title="Найти"
+				placeholder="Начните вводить название..."
 				onChange={e => console.log(e)}
 				onClick={e => console.log(e)}
 			/>

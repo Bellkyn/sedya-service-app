@@ -1,9 +1,9 @@
 import React from 'react';
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { Button } from 'shared/ui/';
 import { IButtonProps } from 'shared/types';
 import { CloseIcon, MenuIcon } from 'shared/ui/Icons/';
-import { DropdownListItem, DropdownListItemProps } from './DropdownListItem';
+import { DropdownListItemProps } from './DropdownListItem';
 import css from './Dropdown.module.css';
 
 type Props = {
@@ -42,18 +42,18 @@ export const Dropdown: React.FC<Props> = ({
 		buttonProps.onClick(e);
 	};
 
-	const validatedChildren = useMemo(() => {
-		const childrens = Array.isArray(children) ? children : [children];
-		return React.Children.map(childrens, child => {
-			if (React.isValidElement(child)) {
-				if (child.type !== DropdownListItem) {
-					return null;
-				}
-				// throw new Error('child element is not "DropdownListItem"');
-				else return child;
-			}
-		});
-	}, [children]);
+	// const validatedChildren = useMemo(() => {
+	// 	const childrens = Array.isArray(children) ? children : [children];
+	// 	return React.Children.map(childrens, child => {
+	// 		if (React.isValidElement(child)) {
+	// 			if (child.type !== DropdownListItem) {
+	// 				return null;
+	// 			}
+	// 			// throw new Error('child element is not "DropdownListItem"');
+	// 			else return child;
+	// 		}
+	// 	});
+	// }, [children]);
 
 	return (
 		<div className={css.root}>

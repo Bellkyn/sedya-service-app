@@ -8,6 +8,7 @@ import {
 	Search
 } from 'shared/ui';
 import css from './LayoutHeader.module.css';
+import { useState } from 'react';
 
 type Props = {
 	children?: boolean;
@@ -65,6 +66,19 @@ export const LayoutHeader: React.FC<Props> = () => {
 		}
 	];
 
+	const [dropdownActive, setDropdownActive] = useState(false);
+	const [searchActive, setSearchActive] = useState(false);
+
+	const onSeacrhInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+		if (dropdownActive) setDropdownActive(false);
+		setSearchActive(true);
+	};
+
+	const onChangeDropdown = (e: boolean) => {
+		if (e === true && searchActive) setSearchActive(false);
+		setDropdownActive(e);
+	};
+
 	return (
 		<header className={css.root}>
 			<Logo />
@@ -75,9 +89,12 @@ export const LayoutHeader: React.FC<Props> = () => {
 					title: 'Категории ресурсов',
 					variant: 'primary'
 				}}
+				onChange={onChangeDropdown}
+				active={dropdownActive}
 			>
 				{items.map(item => (
 					<DropdownListItem
+						key={item.title}
 						onClick={() => {}}
 						title={item.title}
 						icon={item.icon}
@@ -87,27 +104,26 @@ export const LayoutHeader: React.FC<Props> = () => {
 			<Search
 				title="Найти"
 				placeholder="Начните вводить название..."
-				onChange={e => console.log(e)}
+				active={searchActive}
+				onChange={onSeacrhInput}
 				onClick={e => console.log(e)}
+				style={{ marginLeft: '20px' }}
 			/>
 			<div className={css['right_actions']}>
 				<Button
 					title="Избранное"
 					variant="text"
-					// iconPosition="right"
 					onClick={() => console.log('abcd')}
 				/>
 				<Button
 					title="Тарифы доступа"
 					variant="text"
-					// iconPosition="right"
 					onClick={() => console.log('abcd')}
 				/>
 				<Button
 					title="Регистрация"
 					variant="primary"
 					icon={<PersonIcon />}
-					// iconPosition="right"
 					onClick={() => console.log('abcd')}
 				/>
 			</div>

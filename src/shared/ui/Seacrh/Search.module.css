@@ -28,7 +28,7 @@
 
 .root > .search_input {
 	flex: 1;
-
+	padding-right: 5px;
 	color: var(--gray-color);
 	font-size: 14px;
 	font-weight: 500;

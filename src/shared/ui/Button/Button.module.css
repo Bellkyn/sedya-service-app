@@ -7,17 +7,14 @@ mask-image: paint(smooth-corners);
 	align-items: center;
 	justify-content: center;
 	column-gap: 5px;
-
 	height: 35px;
 	padding: 10px 15px;
 
 	border: none;
 	border-radius: 45px;
-
 	background: none;
 	outline: none;
 
-	/* letter-spacing: 0.4px; */
 	font-weight: 500;
 	font-size: 14px;
 
@@ -25,21 +22,21 @@ mask-image: paint(smooth-corners);
 		color: var(--white-color);
 		background: var(--blue-primary-color);
 		fill: var(--white-color);
-	}
 
-	&_variant_primary:hover {
-		color: var(--white-color);
-		background: var(--blue-secondary-color);
+		&:hover {
+			color: var(--white-color);
+			background: var(--blue-secondary-color);
+		}
 	}
 
 	&_variant_text {
 		color: var(--black-color);
 		color: var(--black-color);
-	}
 
-	&_variant_text:hover {
-		color: var(--black-color);
-		background: var(--light-gray-color);
+		&:hover {
+			color: var(--black-color);
+			background: var(--light-gray-color);
+		}
 	}
 
 	&_variant_secondary {
